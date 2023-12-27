@@ -15,12 +15,12 @@ func main() {
 	http.Handle("/", &app.Handler{
 		Name:        "Blaster",
 		Description: "Blaster helps you Backblast",
-		Resources:   app.GitHubPages("REPOSITORY_NAME"),
 		Styles: []string{
 			"/web/app.css",
 		},
 	})
 
+	log.Printf("Open http://localhost:8000/...")
 	if err := http.ListenAndServe(":8000", nil); err != nil {
 		log.Fatal(err)
 	}

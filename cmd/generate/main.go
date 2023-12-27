@@ -2,7 +2,6 @@ package main
 
 import (
 	"log"
-	"net/http"
 
 	"github.com/maxence-charriere/go-app/v9/pkg/app"
 
@@ -12,7 +11,7 @@ import (
 func main() {
 	app.Route("/", &blaster.App{})
 	app.RunWhenOnBrowser()
-	http.Handle("/", &app.Handler{
+	err := app.GenerateStaticWebsite(".", &app.Handler{
 		Name:        "Blaster",
 		Description: "Blaster helps you Backblast",
 		Resources:   app.GitHubPages("REPOSITORY_NAME"),
@@ -20,8 +19,7 @@ func main() {
 			"/web/app.css",
 		},
 	})
-
-	if err := http.ListenAndServe(":8000", nil); err != nil {
+	if err != nil {
 		log.Fatal(err)
 	}
 }
