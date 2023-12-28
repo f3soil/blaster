@@ -19,7 +19,11 @@ func (x *previewer) OnMount(ctx app.Context) {
 func (x *previewer) Render() app.UI {
 	previewerTextID := "previewer-text"
 	return app.Div().ID("previewer").Body(
-		app.Input().ID(previewerTextID).ReadOnly(true).Value(x.content),
+		app.Textarea().ID(previewerTextID).
+			Attr("rows", 40).
+			Attr("cols", 60).
+			ReadOnly(true).
+			Text(x.content),
 		app.Br(),
 		app.Button().Attr("onclick", fmt.Sprintf("copyToClipboard(%q)", previewerTextID)).Text("Copy"),
 	)
