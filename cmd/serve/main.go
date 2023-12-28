@@ -15,6 +15,9 @@ func main() {
 	http.Handle("/", &app.Handler{
 		Name:        "Blaster",
 		Description: "Blaster helps you Backblast",
+		Scripts: []string{
+			"/web/extra.js",
+		},
 		Styles: []string{
 			"/web/app.css",
 		},

@@ -15,6 +15,9 @@ func main() {
 		Name:        "Blaster",
 		Description: "Blaster helps you Backblast",
 		Resources:   app.GitHubPages("REPOSITORY_NAME"),
+		Scripts: []string{
+			"/web/extra.js",
+		},
 		Styles: []string{
 			"/web/app.css",
 		},

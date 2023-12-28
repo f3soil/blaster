@@ -11,12 +11,13 @@ type editor struct {
 func (x *editor) Render() app.UI {
 	return app.Div().ID("editor").Body(
 		app.Input().
-			OnKeyPress(x.onKeyPress).
+			OnKeyDown(x.onKeyPress).
+			OnChange(x.onKeyPress).
 			Type("textbox").
 			AutoFocus(true),
 	)
 }
 
 func (x *editor) onKeyPress(ctx app.Context, e app.Event) {
-	ctx.SetState(stateContent, e.String())
+	ctx.SetState(stateContent, ctx.JSSrc().Get("value").String())
 }

@@ -1,6 +1,8 @@
 package blaster
 
 import (
+	"fmt"
+
 	"github.com/maxence-charriere/go-app/v9/pkg/app"
 )
 
@@ -15,6 +17,10 @@ func (x *previewer) OnMount(ctx app.Context) {
 }
 
 func (x *previewer) Render() app.UI {
+	previewerTextID := "previewer-text"
 	return app.Div().ID("previewer").Body(
-		app.Strong().Text(x.content))
+		app.Input().ID(previewerTextID).ReadOnly(true).Value(x.content),
+		app.Br(),
+		app.Button().Attr("onclick", fmt.Sprintf("copyToClipboard(%q)", previewerTextID)).Text("Copy"),
+	)
 }
