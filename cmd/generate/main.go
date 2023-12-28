@@ -11,7 +11,7 @@ import (
 func main() {
 	app.Route("/", &blaster.App{})
 	app.RunWhenOnBrowser()
-	err := app.GenerateStaticWebsite(".", &app.Handler{
+	err := app.GenerateStaticWebsite("docs", &app.Handler{
 		Name:        "Blaster",
 		Description: "Blaster helps you Backblast",
 		Resources:   app.GitHubPages("REPOSITORY_NAME"),

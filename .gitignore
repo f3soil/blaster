@@ -3,5 +3,5 @@
 
 # build artifacts
 /bin/
+/docs/
 /web/app.wasm
-/blaster
