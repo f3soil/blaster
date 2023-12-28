@@ -14,7 +14,7 @@ func main() {
 	err := app.GenerateStaticWebsite("docs", &app.Handler{
 		Name:        "Blaster",
 		Description: "Blaster helps you Backblast",
-		Resources:   app.GitHubPages("REPOSITORY_NAME"),
+		Resources:   app.GitHubPages("blaster"),
 		Scripts: []string{
 			"/web/extra.js",
 		},
