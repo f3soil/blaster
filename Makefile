@@ -21,6 +21,8 @@ bin/serve: $(GO_FILES)
 .PHONY: clean
 clean:
 	rm -f ./bin/generate ./bin/serve ./web/app.wasm
+	rm -rf ./docs
+	mkdir ./docs
 
 .PHONY: generate
 generate: bin/generate
