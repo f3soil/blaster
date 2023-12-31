@@ -16,10 +16,10 @@ func main() {
 		Name:        "Blaster",
 		Description: "Blaster helps you Backblast",
 		Scripts: []string{
-			"/web/extra.js",
+			"/web/blaster.js",
 		},
 		Styles: []string{
-			"/web/app.css",
+			"/web/blaster.css",
 		},
 	})
 

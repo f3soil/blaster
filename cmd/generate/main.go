@@ -16,10 +16,10 @@ func main() {
 		Description: "Blaster helps you Backblast",
 		Resources:   app.GitHubPages("blaster"),
 		Scripts: []string{
-			"/web/extra.js",
+			"/web/blaster.js",
 		},
 		Styles: []string{
-			"/web/app.css",
+			"/web/blaster.css",
 		},
 	})
 	if err != nil {
