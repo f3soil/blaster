@@ -24,6 +24,7 @@ clean:
 
 .PHONY: generate
 generate: bin/generate
+	cp -r web docs/
 	./bin/generate
 
 .PHONY: serve
