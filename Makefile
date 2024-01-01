@@ -27,7 +27,7 @@ clean:
 generate: bin/generate web/app.wasm
 	mkdir ./docs
 	./bin/generate
-	find -xs web -type d -exec mkdir -p docs/{} \; -or -type f -exec cp {} docs/{} \;
+	find web -type d -exec mkdir -p docs/{} \; -or -type f -exec cp {} docs/{} \;
 
 .PHONY: serve
 serve: web/app.wasm bin/serve
