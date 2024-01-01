@@ -25,7 +25,7 @@ clean:
 	mkdir ./docs
 
 .PHONY: generate
-generate: bin/generate
+generate: bin/generate web/app.wasm
 	cp -r web docs/
 	./bin/generate
 
