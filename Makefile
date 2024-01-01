@@ -22,12 +22,12 @@ bin/serve: $(GO_FILES)
 clean:
 	rm -f ./bin/generate ./bin/serve ./web/app.wasm
 	rm -rf ./docs
-	mkdir ./docs
 
 .PHONY: generate
 generate: bin/generate web/app.wasm
-	cp -r web docs/
+	mkdir ./docs
 	./bin/generate
+	find -xs web -type d -exec mkdir -p docs/{} \; -or -type f -exec cp {} docs/{} \;
 
 .PHONY: serve
 serve: web/app.wasm bin/serve
