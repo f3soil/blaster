@@ -41,6 +41,7 @@ jobs:
       - name: Build
         run: |
           make generate
+          find ./docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
